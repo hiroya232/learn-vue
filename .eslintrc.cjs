@@ -15,5 +15,6 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["vue", "@typescript-eslint"],
+  ignorePatterns: ["/src/vite-env.d.ts"],
   rules: {},
 };
