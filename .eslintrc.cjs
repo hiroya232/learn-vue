@@ -16,5 +16,7 @@ module.exports = {
   },
   plugins: ["vue", "@typescript-eslint"],
   ignorePatterns: ["/src/vite-env.d.ts"],
-  rules: {},
+  rules: {
+    "indent": ["error", 2],
+  },
 };
