@@ -1,44 +1,48 @@
 <template>
-  <h1 class="title">
+  <TitleText class="title">
     ログイン
-  </h1>
+  </TitleText>
   <v-container>
     <v-form
       ref="form"
       class="login-form"
       @submit.prevent="login"
     >
-      <v-text-field
-        v-model="userName"
-        label="Username"
-        required
-        :rules="usernameRules"
+      <TextField
+        ref="userIdForm"
+        label="ID"
+        type="text"
+        :required="true"
+        :rules="userNameRules"
       />
-      <v-text-field
-        v-model="password"
+      <TextField
+        ref="userPasswordForm"
         label="Password"
         type="password"
-        required
+        :required="true"
         :rules="passwordRules"
       />
-      <v-btn
-        class="login-btn"
+      <TextButton
+        class="login-button"
         type="submit"
         color="primary"
       >
         Login
-      </v-btn>
+      </TextButton>
     </v-form>
   </v-container>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import TitleText from '../atoms/TitleText.vue'
+import TextField from '../atoms/TextField.vue';
+import TextButton from '../atoms/TextButton.vue';
 
-const userName = ref<string>('');
-const password = ref<string>('');
+const userIdForm = ref();
+const userPasswordForm = ref();
 
-const usernameRules = [
+const userNameRules = [
   (v: string) => !!v || 'Username is required',
   (v: string) => v.length > 3 || 'Username must be at least 3 characters',
 ];
@@ -65,7 +69,7 @@ const login = () => {
   margin: 0 auto;
 }
 
-.login-btn {
+.login-button {
   width: 50%;
   margin: 0 auto;
 }
