@@ -14,9 +14,32 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     sourceType: "module",
   },
-  plugins: ["vue", "@typescript-eslint"],
+  plugins: ["vue", "@typescript-eslint", "import", "unused-imports"],
   ignorePatterns: ["/src/vite-env.d.ts"],
   rules: {
     "indent": ["error", 2],
-  },
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "parent",
+            "sibling"
+          ],
+          "object",
+          "type",
+          "index"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+      }
+    ],
+    "unused-imports/no-unused-imports": "error"
+  }
 };
