@@ -6,8 +6,8 @@
     "serve": "vite preview",
     "build": "vite build",
     "dev": "vite",
-    "lint": "eslint --ext .jsx,.js,.tsx,.ts,.vue .",
-    "lint:fix": "eslint --fix --ext .jsx,.js,.tsx,.ts,.vue .",
+    "lint": "eslint --ext .jsx,.js,.cjs,.tsx,.ts,.vue .",
+    "lint:fix": "eslint --fix --ext .jsx,.js,.cjs,.tsx,.ts,.vue .",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "@vitejs/plugin-vue": "^3.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
     "eslint": "^8.20.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-unused-imports": "^2.0.0",

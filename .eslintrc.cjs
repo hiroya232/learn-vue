@@ -1,45 +1,42 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
     node: true,
   },
   extends: [
-    "plugin:vue/vue3-recommended",
-    "plugin:@typescript-eslint/recommended",
+    'eslint:recommended',
+    'plugin:vue/vue3-recommended',
+    '@vue/eslint-config-typescript/recommended',
   ],
-  parser: "vue-eslint-parser",
-  parserOptions: {
-    ecmaVersion: "latest",
-    parser: "@typescript-eslint/parser",
-    sourceType: "module",
-  },
-  plugins: ["vue", "@typescript-eslint", "import", "unused-imports"],
-  ignorePatterns: ["/src/vite-env.d.ts"],
+  plugins: ['vue', '@typescript-eslint', 'import', 'unused-imports'],
+  ignorePatterns: ['/src/vite-env.d.ts'],
   rules: {
-    "indent": ["error", 2],
-    "import/order": [
-      "error",
+    'quotes': ['error', 'single', { 'avoidEscape': true }],
+    'indent': ['error', 2],
+    'import/order': [
+      'error',
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
+        'groups': [
+          'builtin',
+          'external',
+          'internal',
           [
-            "parent",
-            "sibling"
+            'parent',
+            'sibling'
           ],
-          "object",
-          "type",
-          "index"
+          'object',
+          'type',
+          'index'
         ],
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
+        'newlines-between': 'always',
+        'alphabetize': {
+          'order': 'asc',
+          'caseInsensitive': true
         },
       }
     ],
-    "unused-imports/no-unused-imports": "error"
+    'unused-imports/no-unused-imports': 'error'
   }
 };
